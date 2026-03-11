@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalised Learning Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Learning Engine</h1>
+            <p>Master your skills with AI-driven recommendations</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- User Info Section -->
+            <section class="card user-setup">
+                <h2>1. Identify Yourself</h2>
+                <div class="input-group">
+                    <label for="user-id">User ID:</label>
+                    <input type="text" id="user-id" placeholder="e.g. user_123" value="user_123">
+                </div>
+                <button id="load-state-btn" class="btn primary">Load My Knowledge State</button>
+            </section>
+
+            <!-- Quiz Simulator Section -->
+            <section class="card quiz-sim">
+                <h2>2. Take a Quick Quiz</h2>
+                <div class="input-group">
+                    <label for="kc-select">Topic (Knowledge Component):</label>
+                    <select id="kc-select">
+                        <option value="newton">Newton's Laws</option>
+                        <option value="acceleration">Acceleration</option>
+                        <option value="velocity">Velocity</option>
+                    </select>
+                </div>
+                <div class="action-buttons">
+                    <button id="correct-btn" class="btn success">I Answered Correctly</button>
+                    <button id="wrong-btn" class="btn danger">I Answered Wrong</button>
+                </div>
+                <div id="quiz-feedback" class="feedback"></div>
+            </section>
+
+            <!-- Status and Recommendations Section -->
+            <div class="bottom-split">
+                <section class="card state-panel">
+                    <h2>Your Mastery State</h2>
+                    <ul id="mastery-list" class="skill-list">
+                        <li class="empty-state">Load state to see mastery...</li>
+                    </ul>
+                </section>
+
+                <section class="card content-panel">
+                    <h2>Recommended For You</h2>
+                    <div class="action-bar">
+                        <button id="get-recs-btn" class="btn secondary">Get Recommendations</button>
+                    </div>
+                    <ul id="recs-list" class="recs-list">
+                        <li class="empty-state">Click button to get recommendations...</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
